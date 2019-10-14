@@ -1,7 +1,7 @@
 # ![nf-core/rnaseq](docs/images/nfcore-rnaseq_logo.png)
 
 [![Build Status](https://travis-ci.org/nf-core/rnaseq.svg?branch=master)](https://travis-ci.org/nf-core/rnaseq)
-[![Nextflow](https://img.shields.io/badge/nextflow-%E2%89%A50.32.0-brightgreen.svg)](https://www.nextflow.io/)
+[![Nextflow](https://img.shields.io/badge/nextflow-%E2%89%A519.04.0-brightgreen.svg)](https://www.nextflow.io/)
 [![DOI](https://zenodo.org/badge/127293091.svg)](https://zenodo.org/badge/latestdoi/127293091)
 
 [![install with bioconda](https://img.shields.io/badge/install%20with-bioconda-brightgreen.svg)](http://bioconda.github.io/)
@@ -11,7 +11,23 @@
 
 **nf-core/rnaseq** is a bioinformatics analysis pipeline used for RNA sequencing data.
 
-The workflow processes raw data from FastQ inputs ([FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/), [Trim Galore!](https://www.bioinformatics.babraham.ac.uk/projects/trim_galore/)), aligns the reads ([STAR](https://github.com/alexdobin/STAR) or [HiSAT2](https://ccb.jhu.edu/software/hisat2/index.shtml)), generates counts relative to genes ([featureCounts](http://bioinf.wehi.edu.au/featureCounts/), [StringTie](https://ccb.jhu.edu/software/stringtie/)) or transcripts ([Salmon](https://combine-lab.github.io/salmon/), [tximport](https://bioconductor.org/packages/release/bioc/html/tximport.html)) and performs extensive quality-control on the results ([RSeQC](http://rseqc.sourceforge.net/), [Qualimap](http://qualimap.bioinfo.cipf.es/), [dupRadar](https://bioconductor.org/packages/release/bioc/html/dupRadar.html), [Preseq](http://smithlabresearch.org/software/preseq/), [edgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html), [MultiQC](http://multiqc.info/)). See the [output documentation](docs/output.md) for more details of the results.
+The workflow processes raw data from
+ FastQ inputs ([FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/),
+ [Trim Galore!](https://www.bioinformatics.babraham.ac.uk/projects/trim_galore/)),
+  aligns the reads
+   ([STAR](https://github.com/alexdobin/STAR) or
+    [HiSAT2](https://ccb.jhu.edu/software/hisat2/index.shtml)),
+     generates counts relative to genes
+      ([featureCounts](http://bioinf.wehi.edu.au/featureCounts/),
+       [StringTie](https://ccb.jhu.edu/software/stringtie/)) or transcripts
+        ([Salmon](https://combine-lab.github.io/salmon/),
+         [tximport](https://bioconductor.org/packages/release/bioc/html/tximport.html)) and performs extensive quality-control on the results
+          ([RSeQC](http://rseqc.sourceforge.net/),
+           [Qualimap](http://qualimap.bioinfo.cipf.es/),
+            [dupRadar](https://bioconductor.org/packages/release/bioc/html/dupRadar.html),
+             [Preseq](http://smithlabresearch.org/software/preseq/),
+              [edgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html),
+               [MultiQC](http://multiqc.info/)). See the [output documentation](docs/output.md) for more details of the results.
 
 The pipeline is built using [Nextflow](https://www.nextflow.io), a workflow tool to run tasks across multiple compute infrastructures in a very portable manner. It comes with docker containers making installation trivial and results highly reproducible.
 
@@ -63,7 +79,6 @@ Many thanks to other who have helped out along the way too, including (but not l
 
 ## Citation
 
-<!-- TODO nf-core: Add citation for pipeline after first release. Uncomment lines below and update Zenodo doi. -->
 If you use nf-core/rnaseq for your analysis, please cite it using the following doi: [10.5281/zenodo.1400710](https://doi.org/10.5281/zenodo.1400710)
 
 You can cite the `nf-core` pre-print as follows:  
