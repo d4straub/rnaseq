@@ -983,7 +983,7 @@ if (!params.remove_rRNA){
                 --other non-rRNA-reads \
                 --log -v
 
-            cat non-rRNA-reads.fastq | sed '/^\s*$/d' > non-rRNA-reads_noempty.fastq
+            cat non-rRNA-reads.fastq | sed '/^\\s*$/d' > non-rRNA-reads_noempty.fastq
             unmerge-paired-reads.sh non-rRNA-reads.fastq non-rRNA-reads-fw.fq non-rRNA-reads-rv.fq
             gzip < non-rRNA-reads-fw.fq > ${name}-fw.fq.gz
             gzip < non-rRNA-reads-rv.fq > ${name}-rv.fq.gz
