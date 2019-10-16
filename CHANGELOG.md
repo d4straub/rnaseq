@@ -11,7 +11,7 @@ Major novel changes include:
 
   * Skip trimming using `--skipTrimming`
   * Skip BiotypeQC using `--skipBiotypeQC`
-  * Skip Alignment using `-skipAlignment` to only use pseudo-alignment using Salmon
+  * Skip Alignment using `--skipAlignment` to only use pseudo-alignment using Salmon
 
 ### Documentation updates
 
@@ -29,10 +29,10 @@ Major novel changes include:
 
 ### Pipeline enhancements & fixes
 
-* Restore `SummarizedExperimment` object creation in the salmon_merge process avoiding increaasing memory with sample size.
+* Restore `SummarizedExperimment` object creation in the salmon_merge process avoiding increasing memory with sample size.
 * Fix sample names in feature counts and dupRadar to remove suffixes added in other processes
 * Removed `genebody_coverage` process [#195](https://github.com/nf-core/rnaseq/issues/195)
-* Implemented Pearsons correlation instead of euclidean distance [#146](https://github.com/nf-core/rnaseq/issues/146)
+* Implemented Pearsons correlation instead of Euclidean distance [#146](https://github.com/nf-core/rnaseq/issues/146)
 * Add `--stringTieIgnoreGTF` parameter [#206](https://github.com/nf-core/rnaseq/issues/206)
 * Removed unused `stringtie` channels for `MultiQC`
 * Integrate changes in `nf-core/tools v1.6` template which resolved [#90](https://github.com/nf-core/rnaseq/issues/90)
@@ -45,6 +45,8 @@ Major novel changes include:
 * Check that gtf features are on chromosomes that exist in the genome fasta file [#274](https://github.com/nf-core/rnaseq/pull/274)
 * Maintain all gff features upon gtf conversion (keeps `gene_biotype` or `gene_type` to make `featureCounts` happy)
 * Add SortMeRNA as an optional step to allow rRNA removal [#280](https://github.com/nf-core/rnaseq/issues/280)
+* Minimal adjustment of memory and CPU constraints for clusters with locked memory / CPU relation
+* Cleaned up usage, `parameters.settings.json` and the `nextflow.config`
 
 ### Dependency Updates
 
@@ -55,19 +57,19 @@ Major novel changes include:
 
 * Picard 2.20.0 -> 2.21.1
 * bioconductor-dupradar 1.12.1 -> 1.14.0
-* bioconductor-edger 3.24.3 -> 3.26.0
+* bioconductor-edger 3.24.3 -> 3.26.5
 * gffread 0.9.12 -> 0.11.4
 * trim-galore 0.6.1 -> 0.6.4
 * gffread 0.9.12 -> 0.11.4
 * rseqc 3.0.0 -> 3.0.1
+* R-Base 3.5 -> 3.6.1
 
 #### Added / Removed Packages
 
-* Dropped CSVtk
+* Dropped CSVtk in favor of Unix's simple `cut` and `paste` utilities
 * Added Salmon 0.14.2
-* Added RSEM 1.3.2
-* Added tximport 1.0.3
-* Added SummarizedExperiment 1.12.0
+* Added TXIMeta 1.2.2
+* Added SummarizedExperiment 1.14.0
 * Added SortMeRNA 2.1b
 * Add tximport and summarizedexperiment dependency [#171](https://github.com/nf-core/rnaseq/issues/171)
 * Add Qualimap dependency [#202](https://github.com/nf-core/rnaseq/issues/202)

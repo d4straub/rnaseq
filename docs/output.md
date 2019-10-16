@@ -8,7 +8,7 @@ and processes data using the following steps:
 
 * [FastQC](#fastqc) - read quality control
 * [TrimGalore](#trimgalore) - adapter trimming
-* [SortMeRNA](#sortmerna) - rRNA removal
+* [SortMeRNA](#sortmerna) - ribosomal RNA removal
 * [STAR](#star) - alignment
 * [RSeQC](#rseqc) - RNA quality control metrics
   * [BAM stat](#bam-stat)
@@ -63,7 +63,8 @@ Contains FastQ files with quality and adapter trimmed reads for each sample, alo
 Single-end data will have slightly different file names and only one FastQ file per sample.
 
 ## SortMeRNA
-When `--remove_rRNA` is specified, nfcore/rnaseq pipeline uses [SortMeRNA](https://github.com/biocore/sortmerna) for removal of rRNA. SortMeRNA requires reference sequences and these are by default from the [SILVA database](https://www.arb-silva.de/).
+
+When `--removeRiboRNA` is specified, nfcore/rnaseq pipeline uses [SortMeRNA](https://github.com/biocore/sortmerna) for removal of rRNA. SortMeRNA requires reference sequences and these are by default from the [SILVA database](https://www.arb-silva.de/).
 
 **Output directory: `results/SortMeRNA`**
 
@@ -403,7 +404,7 @@ StringTie outputs FPKM metrics for genes and transcripts as well as the transcri
   * This `.gtf` file contains the transcripts that are fully covered by reads.
 
 ## Sample Correlation
-[edgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html) is a Bioconductor package for R used for RNA-seq data analysis. The script included in the pipeline uses edgeR to normalise read counts and create a heatmap showing Pearsons correlation and a dendrogram showing pairwise Euclidean distances between the samples in the experiment. It also creates a 2D MDS scatter plot showing sample grouping. These help to show sample similarity and can reveal batch effects and sample groupings.
+[edgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html) is a Bioconductor package for R used for RNA-seq data analysis. The script included in the pipeline uses edgeR to normalise read counts and create a heatmap showing Pearson's correlation and a dendrogram showing pairwise Euclidean distances between the samples in the experiment. It also creates a 2D MDS scatter plot showing sample grouping. These help to show sample similarity and can reveal batch effects and sample groupings.
 
 **Heatmap:**
 
