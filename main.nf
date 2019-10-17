@@ -58,7 +58,7 @@ def helpMessage() {
 
     Ribosomal RNA removal:
       --removeRiboRNA               Removes ribosomal RNA using SortMeRNA
-      --save_nonrRNA_reads          Save FastQ file intermediates after removing rRNA
+      --saveNonRiboRNAReads         Save FastQ file intermediates after removing rRNA
       --rRNA_database_manifest      Path to file that contains file paths for rRNA databases, optional
 
     Alignment:
