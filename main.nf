@@ -966,7 +966,8 @@ if (!params.removeRiboRNA){
                 --other non-rRNA-reads \
                 --log -v
 
-            gzip --force < non-rRNA-reads.fastq > ${name}.fq.gz
+            cat non-rRNA-reads.fastq | sed '/^\\s*\$/d' > non-rRNA-reads_noempty.fastq
+            gzip --force < non-rRNA-reads_noempty.fastq > ${name}.fq.gz
 
             mv rRNA-reads.log ${name}_rRNA_report.txt
             """
@@ -985,7 +986,8 @@ if (!params.removeRiboRNA){
                 --other non-rRNA-reads \
                 --log -v
 
-            unmerge-paired-reads.sh non-rRNA-reads.fastq non-rRNA-reads-fw.fq non-rRNA-reads-rv.fq
+            cat non-rRNA-reads.fastq | sed '/^\\s*\$/d' > non-rRNA-reads_noempty.fastq
+            unmerge-paired-reads.sh non-rRNA-reads_noempty.fastq non-rRNA-reads-fw.fq non-rRNA-reads-rv.fq
             gzip < non-rRNA-reads-fw.fq > ${name}-fw.fq.gz
             gzip < non-rRNA-reads-rv.fq > ${name}-rv.fq.gz
 
